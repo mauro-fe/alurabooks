@@ -1,0 +1,212 @@
+.cabecalho__menu-hamburguer {
+    background-image: url(../img/Menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.container__botao:checked~.container__rotulo>.cabecalho__menu-hamburguer {
+    background-image: url("../img/Menu-aberto.png");
+}
+
+.container__botao:checked~.container__rotulo {
+    background: var(--azul-degrade);
+}
+
+.cabecalho {
+    align-items: center;
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem;
+    position: relative;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__imagem {
+    padding: .5rem 1rem;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 50vw;
+}
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    background-clip: text;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+    padding: .8rem;
+    background-color: var(--branco);
+}
+
+.container__titulo,
+.container__texto,
+.opcoes {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .container__titulo {
+        display: block;
+        font-weight: 400;
+    }
+
+    .container__titulo,
+    .container__titulo--negrito {
+        font-family: var(--fonte-secundario);
+        font-size: 2rem;
+        max-width: 100%;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .container__titulo:hover,
+    .container__titulo--negrito:hover {
+        -moz-transform: scale(1.4);
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
+
+    .opcoes__botao:checked~.lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao:checked~.opcoes__rotulo>.opcoes__item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .opcoes__item-menu {
+        font-weight: 500;
+    }
+
+    .opcoes__item-menu:hover {
+        color: var(--laranja);
+    }
+
+    .opcoes__item {
+        margin: 1rem 1rem 0 0;
+        text-transform: uppercase;
+        padding: 1rem 1rem 1.5rem 0;
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+        color: var(--laranja);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link {
+        text-decoration: none;
+        -webkit-text-fill-color: var(--branco);
+    }
+
+    .opcoes__link {
+        color: var(--preto);
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .opcoes__link:hover {
+        color: var(--laranja);
+    }
+
+    .container__imagem {
+        margin: .5rem 2rem;
+    }
+
+    .container__imagem-transparente {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+
+    .container {
+        padding: 0 3rem;
+    }
+
+    .container__titulo,
+    .container__titulo--negrito:hover {
+        -moz-transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+
+    .container__titulo:hover,
+    .container__titulo--negrito:hover {
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .container__link {
+        align-items: center;
+        display: flex;
+        text-decoration: none;
+    }
+
+    .container__texto {
+        color: var(--preto);
+        display: block;
+        font-weight: 500;
+    }
+
+    .container__texto:hover {
+        color: var(--laranja);
+    }
+
+    .container__imagem {
+        margin: 0 auto;
+    }
+}
